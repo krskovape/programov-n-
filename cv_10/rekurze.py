@@ -1,4 +1,4 @@
-from turtle import forward, left, speed
+from turtle import exitonclick, forward, left, speed
 
 speed(0)
 
@@ -10,3 +10,4 @@ def spirala(a):
     spirala(a-1)
 
 spirala(80)
+exitonclick()

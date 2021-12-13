@@ -1,13 +1,26 @@
-from turtle import forward, left, right, speed, exitonclick
+from turtle import forward, left, right, speed, exitonclick, setpos, penup, pendown
 
 speed(0)
+penup()
+setpos(-200, 200)
+pendown()
 
 def vlocka(a, u):
     if (u == 0):
+        forward(a)
         return
-    a /= 3
-    forward(a)
+    vlocka(a/3, u-1)
     left(60)
-    forward(a)
-    right(60)
-    forward(60)
+    vlocka(a/3, u-1)
+    right(120)
+    vlocka(a/3, u-1)
+    left(60)
+    vlocka(a/3, u-1)
+
+#vlocka(120,3)
+
+for _ in range(3):
+    vlocka(500,4)
+    right(120)
+
+exitonclick()
